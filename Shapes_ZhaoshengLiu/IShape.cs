@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Shapes_ZhaoshengLiu
 {
-    interface IShapes
+    interface IShape
     {
-        void Dispaly();
         double CalculateArea();
+
+        void Display();
+
+        void SetParam();
     }
 }

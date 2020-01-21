@@ -6,18 +6,24 @@ using System.Threading.Tasks;
 
 namespace Shapes_ZhaoshengLiu
 {
-    class Circle : IShapes
+    class Circle : IShape
     {
+        private const string RADIUS = "radius";
+
         public double Radius { get; set; }
 
         public double CalculateArea()
         {
-            return Math.PI * Math.Sqrt(Radius);
+            return Math.PI * Math.Pow(Radius, 2.0);
+        }
+        public void Display()
+        {
+            Console.WriteLine($"The circle area is {CalculateArea()}");
         }
 
-        public void Dispaly()
+        public void SetParam()
         {
-            throw new NotImplementedException();
+            Radius = Utilities.GetNumber(RADIUS);
         }
     }
 }

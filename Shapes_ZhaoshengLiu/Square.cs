@@ -6,17 +6,24 @@ using System.Threading.Tasks;
 
 namespace Shapes_ZhaoshengLiu
 {
-    class Square : IShapes
+    class Square : IShape
     {
+        private const string LENGTH = "length";
         public double Length { get; set; }
+
         public double CalculateArea()
         {
-            return Math.Sqrt(Length);
+            return Math.Pow(Length, 2.0);
         }
 
-        public void Dispaly()
+        public void Display()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"The square area is {CalculateArea()}");
+        }
+
+        public void SetParam()
+        {
+            Length = Utilities.GetNumber(LENGTH);
         }
     }
 }

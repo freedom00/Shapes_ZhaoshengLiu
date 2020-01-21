@@ -6,20 +6,30 @@ using System.Threading.Tasks;
 
 namespace Shapes_ZhaoshengLiu
 {
-    class Rectangle : IShapes
+    class Rectangle : IShape
     {
-        public double Length { get; set; }
-        public double Width { get; set; }
+        private const string LENGTH = "length";
+        private const string WIDTH = "width";
 
+        public double Length { get; set; }
+
+        public double Width { get; set; }
 
         public double CalculateArea()
         {
             return Length * Width;
         }
 
-        public void Dispaly()
+        public void Display()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"The rectangle area is {CalculateArea()}");
         }
+
+        public void SetParam()
+        {
+            Length = Utilities.GetNumber(LENGTH);
+            Width = Utilities.GetNumber(WIDTH);
+        }
+
     }
 }
